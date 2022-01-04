@@ -9,8 +9,6 @@ class Alien
 private:
 
 	char direction;
-
-	bool colisionAlien();
 	void moveAlien();
 
 public:
