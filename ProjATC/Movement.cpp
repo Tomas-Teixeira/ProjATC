@@ -1,12 +1,21 @@
 //Função que trata dos movimentos no eixo dos Y
-void moveX()
+//Apenas Inimigos
+void moveY()
 {
 
 }
 
 //Função que trata dos movimentos no eixo dos X
-void moveY()
+//Nave e Alien
+void moveX()
 {
 	
 }
+
+//Verifica colisão no eixo dos X
+bool colisionX()
+{
+
+}
+
 

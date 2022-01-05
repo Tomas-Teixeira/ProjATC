@@ -13,6 +13,8 @@ void Alien::moveAlien()
         if ()
             ;
         break;
+    case KEY_ENTER:
+        if ()
 
     }
 
