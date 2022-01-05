@@ -3,5 +3,5 @@
 
 int main()
 {
-	cout << "vê agora";
+	std::cout << "vê agora";
 }
