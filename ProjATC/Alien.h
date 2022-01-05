@@ -9,11 +9,12 @@ class Alien
 private:
 	int pos_x;
 	int pos_y;
-	void moveAlien();
 
 public:
 	Alien();
 	~Alien();
-	void start();
+	void moveAlien();
+	bool checkColisionAlien();
+
 };
 

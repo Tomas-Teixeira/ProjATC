@@ -8,11 +8,18 @@ class Spaceship
 {
 private:
 	int pos_x;
-	int pos_y;
-	void moveSpaceship();
+	int const pos_y;
+	int life;
 
 public:
 	Spaceship();
 	~Spaceship();
+
+	void moveSpaceship();
+	void subLife();
+	void resetLife();
+	bool checkColisionSpaceship();
+	void shoot();
+	void Difficulty();
 	
 };
