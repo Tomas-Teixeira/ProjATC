@@ -7,8 +7,8 @@
 class Alien
 {
 private:
-
-	char direction;
+	int pos_x;
+	int pos_y;
 	void moveAlien();
 
 public:
