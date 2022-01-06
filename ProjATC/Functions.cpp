@@ -5,48 +5,49 @@ int maxheight;
 
 void createWindow()
 {
-	initscr();
-	nodelay(stdscr, true);
-	keypad(stdscr, true);
-	noecho();
-	curs_set(0);
-	getmaxyx(stdscr, maxheight, maxwidth);
+    initscr();
+    nodelay(stdscr, true);
+    keypad(stdscr, true);
+    noecho();
+    curs_set(0);
+    getmaxyx(stdscr, maxheight, maxwidth);
 
 }
 
-void drawBorder()
+void menu_inicial() {
+    mvprintw(15, 50, "Press key to start");
+    refresh();
+    system("pause");
+}
+
+void drawBorder(int h, int w)
 {
-    char oldalchar;
-    oldalchar = (char)219;
-
-    for (int i = 0; i < maxwidth - 1; i++)
+    for (int i = 7; i < h; i++)
     {
-        move(0, i);
-        addch(oldalchar);
+        mvprintw(i, 85, "W|");
     }
 
-    for (int i = 0; i < maxheight - 1; i++)
+    for (int i = 7; i < h; i++)
     {
-        move(i, 0);
-        addch(oldalchar);
+        mvprintw(i, 38, "W|");
     }
 
-    for (int i = 0; i < maxwidth - 1; i++)
+    for (int i = 38; i < w - 34; i++)
     {
-        move(maxheight - 2, i);
-        addch(oldalchar);
+        mvprintw(29, i, "*");
     }
 
-    for (int i = 0; i < maxheight - 1; i++)
+    for (int i = 38; i < w - 34; i++)
     {
-        move(i, maxwidth - 2);
-        addch(oldalchar);
+        mvprintw(6, i, "*");
     }
+
+
 }
 
 void deleteWindow()
 {
-	nodelay(stdscr, false);
-	getch();
-	endwin();
+    nodelay(stdscr, false);
+    getch();
+    endwin();
 }
