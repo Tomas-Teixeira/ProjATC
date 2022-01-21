@@ -1,27 +1,26 @@
 #pragma once
-#include <iostream>
-#include <vector>
-#include <list>
-#include <curses.h>
-#include <cstdlib>
 #include "Functions.cpp"
 
 class Alien
 {
-	
 private:
-	int pos_x;
-	int pos_y;
-	
+
+	Coords Position;
+
+	const char* uperAlien = (" _____ ");
+	const char* midAlien = ("/ O O \\");
+	const char* lowerAlien = ("\\/---\\/");
+
 
 public:
-	Alien(); 
-	~Alien();
-	void createAliens();
+	Alien()
+	{
+		Position.x = 0;
+		Position.y = 0;
+		createAlien();
+	}
+
 	void moveAlien();
-	bool checkColisionAlien();
+	void createAlien();
 
 };
-
-//3 vetores com 3 tipos de alien
-// 
