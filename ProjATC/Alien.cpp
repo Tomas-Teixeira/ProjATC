@@ -9,7 +9,7 @@ void Alien::moveAlien()
 	int next_x = 0;
 	int direction = 1;
 
-	next_x = Position.x + 5 + direction;
+	next_x = positionAlien.x + 5 + direction;
 	if (next_x >= windowSize.x || next_x < 14) {
 			direction *= -1;
 			y += 1;
@@ -21,7 +21,11 @@ void Alien::moveAlien()
 
 void Alien::createAlien() //cria apenas um dos alien é preciso fazer com que crie varios no eixo do x e y
 {	
-	mvprintw(Position.x, Position.y, uperAlien);
-	mvprintw(Position.x, Position.y -1, midAlien);
-	mvprintw(Position.x, Position.y - 2, lowerAlien);
+	mvprintw(positionAlien.x, positionAlien.y, uperAlien);
+	mvprintw(positionAlien.x, positionAlien.y -1, midAlien);
+	mvprintw(positionAlien.x, positionAlien.y - 2, lowerAlien);
+}
+
+void Alien::shootAlien()
+{
 }

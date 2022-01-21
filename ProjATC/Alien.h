@@ -1,11 +1,12 @@
 #pragma once
 #include "Functions.cpp"
+#include "Tiros.cpp"
 
 class Alien
 {
 private:
 
-	Coords Position;
+	Coords positionAlien;
 
 	const char* uperAlien = (" _____ ");
 	const char* midAlien = ("/ O O \\");
@@ -15,12 +16,13 @@ private:
 public:
 	Alien()
 	{
-		Position.x = 0;
-		Position.y = 0;
+		positionAlien.x = 0;
+		positionAlien.y = 0;
 		createAlien();
 	}
 
 	void moveAlien();
 	void createAlien();
+	void shootAlien();
 
 };

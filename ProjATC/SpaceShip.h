@@ -3,18 +3,19 @@
 #include <vector>
 #include <curses.h>
 #include <cstdlib>
+#include "Functions.cpp"
 
 class Spaceship
 {
 private:
-	int pos_x;
-	int const pos_y;
 	int life;
+	Coords positionSpaceship; // O x é metade do x_max 
 
 public:
 	Spaceship();
 	~Spaceship();
 
+	void createSpaceship();
 	void moveSpaceship();
 	void subLife();
 	void resetLife();
