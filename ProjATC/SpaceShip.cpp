@@ -8,6 +8,16 @@ void Spaceship::createSpaceship()
 	mvprintw(positionSpaceship.x+2, positionSpaceship.y , );
 }
 
+void Spaceship::subLife()
+{
+    life--;
+}
+
+void Spaceship::resetLife()
+{
+    life = 0;
+}
+
 void Spaceship::moveSpaceship()
 {
     int ch;
@@ -25,5 +35,8 @@ void Spaceship::moveSpaceship()
             positionSpaceship.x = positionSpaceship.x;
         else
             positionSpaceship -= 1;
+
+    case KEY_ENTER:
+        //DAR O TIRO
         break;
 }
