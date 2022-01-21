@@ -1,12 +1,14 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <list>
 #include <curses.h>
 #include <cstdlib>
 #include "Functions.cpp"
 
 class Alien
 {
+	
 private:
 	int pos_x;
 	int pos_y;

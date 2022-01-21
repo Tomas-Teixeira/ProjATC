@@ -1,4 +1,6 @@
 #include <curses.h>
+#include <stdlib.h>
+
 
 int maxwidth;
 int maxheight;
