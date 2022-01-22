@@ -1,16 +1,19 @@
+#include "Coordenadas.cpp"
+
+using namespace std;
+
 #pragma once
-class Obstacle
-{
-private:
-	int x;
-	int y;
-	int life;
 
-
+class Obstacle {
+protected:
+    int x, y;
 public:
-	Obstacle();
-	void subLife();
-	void resetLife();
-	
+    Obstacle(int a, int b)
+    {
+        y = a;
+        x = b;
+    }
+    void draw() {
+        mvprintw(y + 1, x + 1, "_");
+    }
 };
-

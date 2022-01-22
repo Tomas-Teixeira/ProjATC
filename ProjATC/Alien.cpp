@@ -1,31 +1,45 @@
 #include "Alien.h"
-#include "Functions.cpp"
+#include <Windows.h>
+using namespace std;
 
-void Alien::moveAlien()
+Alien::Alien(int x, int y) : aliendirection(1), alienx(x), alieny(y) {
+
+}
+
+int Alien::get_aly()
 {
-	Coords windowSize;
-	windowSize = getWindowSize(); //Nao funciona para ter o maximo do x e y
-
-	int next_x = 0;
-	int direction = 1;
-
-	next_x = positionAlien.x + 5 + direction;
-	if (next_x >= windowSize.x || next_x < 14) {
-			direction *= -1;
-			y += 1;
-		}
-		else {
-			x += direction;
-		}
+    return alieny;
 }
 
-void Alien::createAlien() //cria apenas um dos alien é preciso fazer com que crie varios no eixo do x e y
-{	
-	mvprintw(positionAlien.x, positionAlien.y, uperAlien);
-	mvprintw(positionAlien.x, positionAlien.y -1, midAlien);
-	mvprintw(positionAlien.x, positionAlien.y - 2, lowerAlien);
-}
-
-void Alien::shootAlien()
+void Alien::draw_alien()
 {
+    mvprintw(alienx, alieny, "V");
 }
+
+int Alien::move_alien(int acc)
+{
+    if (acc % 2 == 0) {
+        if (alieny >= 84 || alieny < 41) {
+            aliendirection *= -1;
+
+            alieny += aliendirection;
+
+
+        }
+        else {
+            alieny += aliendirection;
+        }
+
+    }
+    if (acc % 500 == 0) {
+        alienx += 5;
+    }
+    if (alienx >= 25) {
+        Sleep(200);
+        return 0;
+    }
+    else {
+        return 1;
+    }
+}
+

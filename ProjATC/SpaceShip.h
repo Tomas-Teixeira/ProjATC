@@ -1,26 +1,22 @@
-#pragma once
-#include <iostream>
-#include <vector>
-#include <curses.h>
-#include <cstdlib>
-#include "Functions.cpp"
+#include "Coordenadas.cpp"
 
-class Spaceship
-{
-private:
-	int life;
-	Coords positionSpaceship; // O x é metade do x_max 
+using namespace std;
+
+#pragma once
+
+class Nave {
+protected:
+
+    int navex, navey, navedirectionx;
+    vector <coord> tiros;
 
 public:
-	Spaceship();
-	~Spaceship();
-
-	void createSpaceship();
-	void moveSpaceship();
-	void subLife();
-	void resetLife();
-	bool checkColisionSpaceship();
-	void shoot();
-	void Difficulty();
-	
+    Nave();
+    bool check_tiros();
+    vector <coord> get_tiros();
+    coord get_tiro(int n);
+    void draw_nave();
+    void move_nave(int ch);
+    void manda_tiros_nave(int ch);
+    void atualiza_tiros_nave();
 };
