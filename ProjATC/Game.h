@@ -103,16 +103,49 @@ void gameLoop()
     int bar2x = 60, bar2y = 26, bar2directionx = 1;
     Nave player = Nave();
     vector<Alien> aux;
+    vector<Obstacle> obsaux;
     vector<Alien> aliens;
     vector<Obstacle> obstaculos;
-    Obstacle ob0 = Obstacle(22, 42); obstaculos.push_back(ob0);
-    Obstacle ob1 = Obstacle(22, 47); obstaculos.push_back(ob1);
-    Obstacle ob2 = Obstacle(22, 52); obstaculos.push_back(ob2);
-    Obstacle ob3 = Obstacle(22, 57); obstaculos.push_back(ob3);
-    Obstacle ob4 = Obstacle(22, 62); obstaculos.push_back(ob4);
-    Obstacle ob5 = Obstacle(22, 67); obstaculos.push_back(ob5);
-    Obstacle ob6 = Obstacle(22, 72); obstaculos.push_back(ob6);
-    Obstacle ob7 = Obstacle(22, 77); obstaculos.push_back(ob7);
+
+    //Criar todos os Obstaculos
+    Obstacle ob0 = Obstacle(23, 40); obstaculos.push_back(ob0);
+    Obstacle ob1 = Obstacle(23, 41); obstaculos.push_back(ob1);
+    Obstacle ob2 = Obstacle(23, 42); obstaculos.push_back(ob2);
+    Obstacle ob3 = Obstacle(23, 43); obstaculos.push_back(ob3);
+    Obstacle ob4 = Obstacle(23, 44); obstaculos.push_back(ob4);
+
+    Obstacle ob5 = Obstacle(23, 48); obstaculos.push_back(ob5);
+    Obstacle ob6 = Obstacle(23, 49); obstaculos.push_back(ob6);
+    Obstacle ob7 = Obstacle(23, 50); obstaculos.push_back(ob7);
+    Obstacle ob8 = Obstacle(23, 51); obstaculos.push_back(ob8);
+    Obstacle ob9 = Obstacle(23, 52); obstaculos.push_back(ob9);
+
+    Obstacle ob10 = Obstacle(23, 56); obstaculos.push_back(ob10);
+    Obstacle ob11 = Obstacle(23, 57); obstaculos.push_back(ob11);
+    Obstacle ob12 = Obstacle(23, 58); obstaculos.push_back(ob12);
+    Obstacle ob13 = Obstacle(23, 59); obstaculos.push_back(ob13);
+    Obstacle ob14 = Obstacle(23, 60); obstaculos.push_back(ob14);
+
+    Obstacle ob15 = Obstacle(23, 64); obstaculos.push_back(ob15);
+    Obstacle ob16 = Obstacle(23, 65); obstaculos.push_back(ob16);
+    Obstacle ob17 = Obstacle(23, 66); obstaculos.push_back(ob17);
+    Obstacle ob18 = Obstacle(23, 67); obstaculos.push_back(ob18);
+    Obstacle ob19 = Obstacle(23, 68); obstaculos.push_back(ob19);
+
+    Obstacle ob20 = Obstacle(23, 72); obstaculos.push_back(ob20);
+    Obstacle ob21 = Obstacle(23, 73); obstaculos.push_back(ob21);
+    Obstacle ob22 = Obstacle(23, 74); obstaculos.push_back(ob22);
+    Obstacle ob23 = Obstacle(23, 75); obstaculos.push_back(ob23);
+    Obstacle ob24 = Obstacle(23, 76); obstaculos.push_back(ob24);
+
+    Obstacle ob25 = Obstacle(23, 80); obstaculos.push_back(ob25);
+    Obstacle ob26 = Obstacle(23, 81); obstaculos.push_back(ob26);
+    Obstacle ob27 = Obstacle(23, 82); obstaculos.push_back(ob27);
+    Obstacle ob28 = Obstacle(23, 83); obstaculos.push_back(ob28);
+    Obstacle ob29 = Obstacle(23, 84); obstaculos.push_back(ob29);
+
+
+    //Criar todos os aliens inimigos
     Alien a0 = Alien(7, 41); aliens.push_back(a0);
     Alien a1 = Alien(7, 46); aliens.push_back(a1);
     Alien a2 = Alien(7, 51); aliens.push_back(a2);
@@ -142,10 +175,13 @@ void gameLoop()
         exit = hailmary(aliens);
         if (exit == 3) { Sleep(400); break; }
 
-        obstaculos = check_collision_obstacle(player, obstaculos);
+        obsaux = check_collision_obstacle(player, obstaculos);
         aux = check_collision_alien(player, aliens);
-        player.colisao(aliens);
+        player.colisao_obstacle(obstaculos);
+        player.colisao_alien(aliens);
         aliens = aux;
+        obstaculos = obsaux;
+
         rand = randalien(acc, aliens);
         if (rand != 999) {
             aliens.at(rand).manda_tiros_alien();

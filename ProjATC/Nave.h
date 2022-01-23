@@ -1,6 +1,7 @@
 #pragma once
 #include "Coordenadas.cpp"
 #include "Alien.h"
+#include "Obstacle.h"
 
 using namespace std;
 
@@ -20,5 +21,7 @@ public:
     void manda_tiros_nave(int ch);//Função que trata da criação de tiros da nave
     void atualiza_tiros_nave();//Função que atualiza a posição dos tiros da nave
     void colisao(vector<Alien> a);
+    void colisao_obstacle(vector<Obstacle> a);
+    void colisao_alien(vector<Alien>a);
 };
 

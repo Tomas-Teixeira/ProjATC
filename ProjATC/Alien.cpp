@@ -19,7 +19,7 @@ void Alien::draw_alien() {
 
 void Alien::move_alien(int acc) {
     if (acc % 2 == 0) {
-        if (alieny >= 84 || alieny < 41) {
+        if (alieny >= 82 || alieny < 41) {
             aliendirection *= -1;
 
             alieny += aliendirection;
@@ -31,7 +31,7 @@ void Alien::move_alien(int acc) {
         }
 
     }
-    if (acc % 400 == 0) {
+    if (acc % 500 == 0) {
         alienx += 3;
     }
 
