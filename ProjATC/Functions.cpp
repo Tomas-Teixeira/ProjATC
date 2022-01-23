@@ -10,6 +10,8 @@
 
 using namespace std;
 
+//QUERO CHORAR0
+
 
 vector<coord> impacto(Nave, vector<Alien>);
 vector<Alien> check_collision_alien(Nave, vector<Alien>);
