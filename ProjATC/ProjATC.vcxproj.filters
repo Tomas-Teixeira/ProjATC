@@ -18,19 +18,10 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Alien.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SpaceShip.cpp">
+    <ClCompile Include="Nave.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Functions.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Obstacle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tiros.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Coordenadas.cpp">
@@ -41,7 +32,7 @@
     <ClInclude Include="Alien.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SpaceShip.h">
+    <ClInclude Include="Nave.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Obstacle.h">

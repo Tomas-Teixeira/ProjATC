@@ -1,5 +1,8 @@
 #include "Coordenadas.cpp"
 
+
+
+
 using namespace std;
 
 #pragma once
@@ -19,4 +22,6 @@ public:
     void move_nave(int ch);
     void manda_tiros_nave(int ch);
     void atualiza_tiros_nave();
+    void tiros_restore(vector<coord> a);
 };
+

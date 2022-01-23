@@ -4,26 +4,59 @@ using namespace std;
 
 class Alien {
 protected:
-    int alienx, alieny, aliendirection;
 
+    vector<coord> tirosalien;
 public:
+    int alienx, alieny, aliendirection;
     Alien(int, int);
-    int get_aly();
-    void draw_alien();
-    int move_alien(int acc);
 
-
-    /*
-    void manda_tiros_alien(int acc) {
-        if (acc % 50 == 0) {
-            coord c0 = coord{ alieny, alienx + 2 };
-            tirosalien.push_back(c0);
-            for (int i = 0; i < tirosalien.size(); i++) {
-
-                tirosalien.at(i).x++;
-            }
-        }
+    int get_aly() {
+        return alieny;
     }
+
+    void draw_alien() {
+        mvprintw(alienx, alieny, "V");
+        mvprintw(alienx, alieny + 1, "V");
+        mvprintw(alienx, alieny + 2, "V");
+    }
+
+
+
+    void move_alien(int acc) {
+        if (acc % 2 == 0) {
+            if (alieny >= 84 || alieny < 41) {
+                aliendirection *= -1;
+
+                alieny += aliendirection;
+
+
+            }
+            else {
+                alieny += aliendirection;
+            }
+
+        }
+        if (acc % 100 == 0) {
+            alienx += 3;
+        }
+
+    }
+
+
+    int game_over() {
+        if (alienx > 24) {
+            return 2;
+        }
+        else return 1;
+    }
+
+    void manda_tiros_alien(int acc) {
+
+        coord c0 = coord{ alieny, alienx + 2 };
+        tirosalien.push_back(c0);
+
+    }
+
     void atualiza_tiros_alien(int acc) {
         if (acc % 10 == 0) {
             for (int i = 0; i < tirosalien.size(); i++) {
@@ -49,6 +82,10 @@ public:
 
     void damage_alien() {
 
-        else return;
-    }*/
+        //else return;
+    }
 };
+
+Alien::Alien(int x, int y) : aliendirection(1), alienx(x), alieny(y) {
+
+}

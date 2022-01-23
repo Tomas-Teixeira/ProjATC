@@ -1,4 +1,4 @@
-#include "Spaceship.h"
+#include "Nave.h"
 
 Nave::Nave() : navex(60), navey(25), navedirectionx(1) {}
 
@@ -63,13 +63,11 @@ void Nave::manda_tiros_nave(int ch)
 {
     switch (ch) {
     case KEY_UP:
-        coord c0 = coord{ navey, navex + 2 };
-        tiros.push_back(c0);
-        for (int i = 0; i < tiros.size(); i++) {
-
-            tiros.at(i).x--;
-            break;
+        if (tiros.size() <= 5) {
+            coord c0 = coord{ navey, navex + 2 };
+            tiros.push_back(c0);
         }
+
     }
 }
 
@@ -96,3 +94,6 @@ void Nave::atualiza_tiros_nave()
     //Atualiza as coords dos tiros percorrendo o vetor de tiros
 }
 
+void Nave::tiros_restore(vector<coord> a) {
+    this->tiros = a;
+}

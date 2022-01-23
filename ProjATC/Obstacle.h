@@ -2,18 +2,28 @@
 
 using namespace std;
 
-#pragma once
 
 class Obstacle {
 protected:
     int x, y;
 public:
-    Obstacle(int a, int b)
-    {
-        y = a;
-        x = b;
-    }
+    Obstacle(int, int);
     void draw() {
-        mvprintw(y + 1, x + 1, "_");
+        mvprintw(y, x, "_");
+    }
+
+    int getx() {
+        return x;
+    }
+
+    int gety() {
+        return y;
     }
 };
+
+Obstacle::Obstacle(int a, int b) {
+    y = a;
+    x = b;
+}
+
+
