@@ -8,6 +8,11 @@ int Alien::get_aly() {
     return alieny;
 }
 
+vector <coord> Alien::get_tiros_alien()
+{
+    return tirosalien;
+}
+
 void Alien::draw_alien() {
     mvprintw(alienx, alieny, "/");
     mvprintw(alienx, alieny + 1, "-");
@@ -21,10 +26,7 @@ void Alien::move_alien(int acc) {
     if (acc % 2 == 0) {
         if (alieny >= 82 || alieny < 41) {
             aliendirection *= -1;
-
             alieny += aliendirection;
-
-
         }
         else {
             alieny += aliendirection;

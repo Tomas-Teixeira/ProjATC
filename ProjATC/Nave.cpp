@@ -1,8 +1,18 @@
 #include "Nave.h"
 #include <curses.h>
 
-Nave::Nave() : navex(60), navey(25), navedirectionx(1), health(3)
+Nave::Nave() : navex(60), navey(26), navedirectionx(1), health(3)
 {
+}
+
+int Nave::getnavex()
+{
+    return navex;
+}
+
+int Nave::getnavey()
+{
+    return navey;
 }
 
 bool Nave::check_tiros()
@@ -90,7 +100,6 @@ void Nave::atualiza_tiros_nave()
             mvprintw(tiros.at(j).x, tiros.at(j).y, "o");
         }
     }
-    //Atualiza as coords dos tiros percorrendo o vetor de tiros
 }
 
 void Nave::colisao_obstacle(vector<Obstacle> a) {
@@ -129,3 +138,18 @@ void Nave::colisao_alien(vector<Alien> a) {
     }
 }
 
+int Nave::damage_nave(vector <Alien> a)
+{
+    if (!a.empty()) {
+        for (int j = 0; j < a.size(); j++) {
+            for (int i = 0; i < a.at(j).get_tiros_alien().size(); i++) {
+                if ((a.at(j).get_tiros_alien().at(i).x == getnavex()) && (a.at(j).get_tiros_alien().at(i).y == getnavey()) || (a.at(j).get_tiros_alien().at(i).x == getnavex()) && (a.at(j).get_tiros_alien().at(i).y == getnavey() + 1) || (a.at(j).get_tiros_alien().at(i).x == getnavex()) && (a.at(j).get_tiros_alien().at(i).y == getnavey() + 2) || (a.at(j).get_tiros_alien().at(i).x == getnavex()) && (a.at(j).get_tiros_alien().at(i).y == getnavey() + 3) || (a.at(j).get_tiros_alien().at(i).x == getnavex()) && (a.at(j).get_tiros_alien().at(i).y == getnavey() + 4)) {
+                    health--;
+                    if (health == 0) return 2;
+                }
+            }
+        }
+        return 1;
+    }
+    return 1;
+}

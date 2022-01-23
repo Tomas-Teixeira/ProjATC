@@ -182,7 +182,7 @@ void gameLoop()
     noecho();
     curs_set(FALSE);
     menu_inicial();
-    tocaMusica();
+    //tocaMusica();
 
     while (exit == 1) {
         nodelay(stdscr, TRUE);
@@ -190,6 +190,8 @@ void gameLoop()
         ch = getch();
         exit = hailmary(aliens);
         if (exit == 3) { Sleep(400); break; }
+        exit = player.damage_nave(aliens);
+        if (exit == 2) { Sleep(400); break; }
 
         obsaux = check_collision_obstacle(player, obstaculos);
         aux = check_collision_alien(player, aliens);
@@ -231,7 +233,6 @@ void gameLoop()
         }
         player.draw_nave();
         player.atualiza_tiros_nave();
-        //atualiza_tiros_alien(acc);
         refresh();
         Sleep(1);
 
@@ -240,25 +241,9 @@ void gameLoop()
 
     clear();
     if (exit == 2) {
-        mvprintw(-8,50,"                                ");
-        mvprintw(-7,50,"     ____________________       ");
-        mvprintw(-6,50,"   /|                    |\\    ");
-        mvprintw(-5,50," /  |                    | \\   ");
-        mvprintw(-4,50," |  |                    |  |   ");
-        mvprintw(-3,50,"  \\ |                    | /   ");
-        mvprintw(-2,50,"   \\|                    |/    "); 
-        mvprintw(-1,50,"    |                    |      ");
-        mvprintw(0,50,"     \\                  /      ");
-        mvprintw(1,50,"      \\                /       ");
-        mvprintw(2,50,"       \\              /        ");
-        mvprintw(3,50,"        |            |          ");
-        mvprintw(4,50,"         |          |           ");
-        mvprintw(5,50,"          |        |            ");
-        mvprintw(6,50,"           |      |             ");
-        mvprintw(7,50,"           |      |             ");
-        mvprintw(8,50,"      _____|      |_____        ");
-        mvprintw(9,50,"     |   VOCE VENCEU!!  |       ");
-        mvprintw(10,50,"      ------------------        ");
+        mvprintw(15, 50, "GAME OVER");
+        system("pause");
+        endwin();
         refresh();
     }
     if (exit == 3) {
