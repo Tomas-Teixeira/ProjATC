@@ -93,24 +93,6 @@ void Nave::atualiza_tiros_nave()
     //Atualiza as coords dos tiros percorrendo o vetor de tiros
 }
 
-void Nave::colisao(vector<Alien> a) {
-    if (!tiros.empty()) {
-        vector<coord> aux;
-        int r = 1;
-        for (int i = 0; i < tiros.size(); i++) {
-            for (int j = 0; j < a.size(); j++) {
-                if ((tiros.at(i).x == a.at(j).alienx) && (tiros.at(i).y == a.at(j).alieny) || (tiros.at(i).x == a.at(j).alienx) && (tiros.at(i).y == a.at(j).alieny + 1) || (tiros.at(i).x == a.at(j).alienx) && (tiros.at(i).y == a.at(j).alieny + 2)) {
-                    r *= 0;
-                }
-
-            }
-            if (r == 1) { aux.push_back(tiros.at(i)); }
-            r = 1;
-        }
-        tiros = aux;
-    }
-}
-
 void Nave::colisao_obstacle(vector<Obstacle> a) {
     if (!tiros.empty()) {
         vector<coord> aux;

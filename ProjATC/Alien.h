@@ -5,7 +5,6 @@ using namespace std;
 
 class Alien {
 private:
-
     vector<coord> tirosalien;
 
 public:

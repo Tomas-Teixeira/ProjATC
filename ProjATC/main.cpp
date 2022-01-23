@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-	gameLoop();
+	gameLoop(); //Função principal do jogo
 }
 
 

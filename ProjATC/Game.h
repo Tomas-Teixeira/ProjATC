@@ -7,17 +7,20 @@
 
 #pragma comment(lib, "winmm.lib")
 
+//Faz com que seja reproduzida música de fundo
 void tocaMusica()
 {
     PlaySound(TEXT("music.wav"), NULL, SND_FILENAME | SND_ASYNC);
 }
 
+//Desenha o menu inicial do jogo
 void menu_inicial() {
     mvprintw(15, 50, "Press key to start");
     refresh();
     system("pause");
 }
 
+//Desenha as bordas da janela do jogo
 void drawBorder(int h, int w)
 {
     for (int i = 7; i < h; i++)
@@ -41,6 +44,7 @@ void drawBorder(int h, int w)
     }
 }
 
+//Exit point do jogo
 int hailmary(vector<Alien> a) {
     if (a.empty()) {
         return 3;
@@ -48,6 +52,7 @@ int hailmary(vector<Alien> a) {
     else return 1;
 }
 
+//Apaga o alien após uma colisão
 vector<Alien> check_collision_alien(Nave a, vector<Alien> b) {
     if (!a.check_tiros()) {
         vector<Alien> alienaux;
@@ -68,7 +73,7 @@ vector<Alien> check_collision_alien(Nave a, vector<Alien> b) {
     else return b;
 }
 
-
+//Apaga o obstaculo após uma colisão
 vector<Obstacle> check_collision_obstacle(Nave a, vector<Obstacle> b) {
     if (!a.check_tiros()) {
         vector<Obstacle> obsaux;
@@ -92,6 +97,7 @@ vector<Obstacle> check_collision_obstacle(Nave a, vector<Obstacle> b) {
     else return b;
 }
 
+//Faz com que um dos Aliens dispare
 int randalien(int acc, vector<Alien> a) {
     if (acc % 100 == 0) {
         int r = rand() % (a.size());
@@ -100,6 +106,7 @@ int randalien(int acc, vector<Alien> a) {
     else  return 999;
 }
 
+//Loop Principal do jogo
 void gameLoop()
 {
     int rand;
