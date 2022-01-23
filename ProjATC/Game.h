@@ -1,5 +1,6 @@
 #pragma once
 
+#include <Windows.h>
 #include "Coordenadas.cpp"
 #include "Nave.h"
 #include "Alien.h"
@@ -239,10 +240,223 @@ void gameLoop()
 
     clear();
     if (exit == 2) {
-        mvprintw(15, 50, "GAME OVER");
+        mvprintw(-8,50,"                                ");
+        mvprintw(-7,50,"     ____________________       ");
+        mvprintw(-6,50,"   /|                    |\\    ");
+        mvprintw(-5,50," /  |                    | \\   ");
+        mvprintw(-4,50," |  |                    |  |   ");
+        mvprintw(-3,50,"  \\ |                    | /   ");
+        mvprintw(-2,50,"   \\|                    |/    "); 
+        mvprintw(-1,50,"    |                    |      ");
+        mvprintw(0,50,"     \\                  /      ");
+        mvprintw(1,50,"      \\                /       ");
+        mvprintw(2,50,"       \\              /        ");
+        mvprintw(3,50,"        |            |          ");
+        mvprintw(4,50,"         |          |           ");
+        mvprintw(5,50,"          |        |            ");
+        mvprintw(6,50,"           |      |             ");
+        mvprintw(7,50,"           |      |             ");
+        mvprintw(8,50,"      _____|      |_____        ");
+        mvprintw(9,50,"     |   VOCE VENCEU!!  |       ");
+        mvprintw(10,50,"      ------------------        ");
+        refresh();
     }
     if (exit == 3) {
-        mvprintw(15, 50, "AGUEROOOOOOOO");
+        mvprintw(2, 50, "                                ");
+        mvprintw(3, 50, "     ____________________       ");
+        mvprintw(4, 50, "   /|                    |\\    ");
+        mvprintw(5, 50, " /  |                    | \\   ");
+        mvprintw(6, 50, " |  |                    |  |   ");
+        mvprintw(7, 50, "  \\ |                    | /   ");
+        mvprintw(8, 50, "   \\|                    |/    ");
+        mvprintw(9, 50, "    |                    |      ");
+        mvprintw(10, 50, "     \\                  /      ");
+        mvprintw(11, 50, "      \\                /       ");
+        mvprintw(12, 50, "       \\              /        ");
+        mvprintw(13, 50, "        |            |          ");
+        mvprintw(14, 50, "         |          |           ");
+        mvprintw(15, 50, "          |        |            ");
+        mvprintw(16, 50, "           |      |             ");
+        mvprintw(17, 50, "           |      |             ");
+        mvprintw(18, 50, "      _____|      |_____        ");
+        mvprintw(19, 50, "     |      Winn!!      |       ");
+        mvprintw(20, 50, "     ------------------        ");
+        
+        refresh();
+        Sleep(5000);
+
+        
+        printw("\n\n\n\n\n\n"
+            "\t\t  ( o) \n"
+            "\t\t   |\\  \n"
+            "\t\t  /||\\ \n"
+            "\t\t  /  \\ \n");
+        refresh();
+        Sleep(200);
+      
+        werase(stdscr);
+        
+        printw("\n\n\n\n\n\n"
+            "\n\n\n\n\n\n"
+            "\t\t    ( o) \n"
+            "\t\t     ||  \n"
+            "\t\t     ||  \n"
+            "\t\t     ||  \n");
+        refresh();
+        Sleep(200);
+
+        werase(stdscr);
+        printw("\n\n\n\n\n\n"
+            "\t\t     ( o) \n"
+            "\t\t      /|  \n"
+            "\t\t     /||\\ \n"
+            "\t\t     /  \\ \n"); 
+        refresh();
+        Sleep(200);
+
+        werase(stdscr);
+        printw("\n\n\n\n\n\n"
+            "\t\t       ( o) \n"
+            "\t\t        ||  \n"
+            "\t\t        ||  \n"
+            "\t\t        ||  \n");
+        refresh();
+        Sleep(200);
+
+        werase(stdscr);
+        printw("\n\n\n\n\n\n"
+            "\t\t        ( o) \n"
+            "\t\t         |\\  \n"
+            "\t\t        /||\\ \n"
+            "\t\t        /  \\ \n");
+        refresh();
+        Sleep(200);
+
+        werase(stdscr);
+        printw("\n\n\n\n\n\n"
+            "\t\t          ( o) \n"
+            "\t\t           ||  \n"
+            "\t\t           ||  \n"
+            "\t\t           ||  \n");
+        refresh();
+        Sleep(200);
+        werase(stdscr);
+      
+        printw("\n\n\n\n\n\n"
+            "\t\t           ( o) \n"
+            "\t\t            /|  \n"
+            "\t\t           /||\\ \n"
+            "\t\t           /  \\ \n");
+        refresh();
+        Sleep(201);
+        werase(stdscr);
+       
+        printw("\n\n\n\n\n\n"
+            "\t\t            ( o) \n"
+            "\t\t             ||  \n"
+            "\t\t             ||  \n"
+            "\t\t             ||  \n");
+        refresh();
+        Sleep(200);
+
+        werase(stdscr);
+        printw("\n\n\n\n\n\n"
+            "\t\t             ( o) \n"
+            "\t\t              |\\  \n"
+            "\t\t             /||\\ \n"
+            "\t\t             /  \\ \n");
+        refresh();
+        Sleep(200);
+
+        werase(stdscr);
+        printw("\n\n\n\n\n\n"
+            "\t\t              ( o) \n"
+            "\t\t               ||  \n"
+            "\t\t               ||  \n"
+            "\t\t               ||  \n");
+        refresh();
+        Sleep(200);
+        werase(stdscr);
+      
+        printw("\n\n\n\n\n\n"
+            "\t\t               ( o) \n"
+            "\t\t                /|  \n"
+            "\t\t               /||\\ \n"
+            "\t\t               /  \\ \n");
+        refresh();
+        Sleep(200);
+        werase(stdscr);
+      
+        printw("\n\n\n\n\n\n"
+            "\t\t                 ( o) \n"
+            "\t\t                  ||  \n"
+            "\t\t                  ||  \n"
+            "\t\t                  ||  \n");
+        refresh();
+        Sleep(200);
+
+        werase(stdscr);
+        printw("\n\n\n\n\n\n"
+            "\t\t                  ( o) \n"
+            "\t\t                   |\\  \n"
+            "\t\t                  /||\\ \n"
+            "\t\t                  /  \\ \n");
+        refresh();
+        Sleep(200);
+
+        werase(stdscr);
+        printw("\n\n\n\n\n\n"
+            "\t\t                    ( o) \n"
+            "\t\t                     ||  \n"
+            "\t\t                     ||  \n"
+            "\t\t                     ||  \n");
+        refresh();
+        Sleep(200);
+
+        werase(stdscr);
+        printw("\n\n\n\n\n\n"
+            "\t\t                     ( o) \n"
+            "\t\t                      /|  \n"
+            "\t\t                     /||\\ \n"
+            "\t\t                     /  \\ \n");
+        refresh();
+        Sleep(201);
+
+        werase(stdscr);
+        printw("\n\n\n\n\n\n"
+            "\t\t                       ( o) \n"
+            "\t\t                        ||  \n"
+            "\t\t                        ||  \n"
+            "\t\t                        ||  \n");
+        refresh();
+        Sleep(200);
+        werase(stdscr);
+        
+        printw("\n\n\n\n\n\n"
+            "\t\t                        ( o) \n"
+            "\t\t                         |\\  \n"
+            "\t\t                        /||\\ \n"
+            "\t\t                        /  \\ \n");
+        refresh();
+        Sleep(200);
+
+        werase(stdscr);
+        printw("\n\n\n\n\n\n"
+            "\t\t                         ( o) \n"
+            "\t\t                          ||  \n"
+            "\t\t                          ||  \n"
+            "\t\t                          ||  \n");
+        refresh();
+        Sleep(2000);
+
+        werase(stdscr);
+        printw("\n\n\n\n\n\n"
+            "\t\t                       ? ( o) ? \n"
+            "\t\t                      ?  \\||/  \n"
+            "\t\t                          ||  \n"
+            "\t\t                          ||  \n");
+        refresh();
+        Sleep(2000);
     }
     refresh();
     system("pause");
