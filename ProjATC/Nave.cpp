@@ -1,7 +1,7 @@
 #include "Nave.h"
 #include <curses.h>
 
-Nave::Nave() : navex(60), navey(26), navedirectionx(1), health(3)
+Nave::Nave() : navex(60), navey(28), navedirectionx(1)
 {
 }
 
@@ -30,17 +30,17 @@ coord Nave::get_tiro(int n)
     return tiros.at(n);
 }
 
-void Nave::draw_nave()
+const void Nave::draw_nave()
 {
-    mvprintw(navey, navex + 2, "^");
-    mvprintw(navey + 1, navex + 1, "0");
-    mvprintw(navey + 1, navex + 2, "0");
-    mvprintw(navey + 1, navex + 3, "0");
-    mvprintw(navey + 2, navex, "0");
-    mvprintw(navey + 2, navex + 1, "0");
-    mvprintw(navey + 2, navex + 2, "0");
-    mvprintw(navey + 2, navex + 3, "0");
-    mvprintw(navey + 2, navex + 4, "0");
+    mvprintw(navey - 2, navex + 2, "^");
+    mvprintw(navey - 1, navex + 1, "0");
+    mvprintw(navey - 1, navex + 2, "0");
+    mvprintw(navey - 1, navex + 3, "0");
+    mvprintw(navey, navex, "0");
+    mvprintw(navey, navex + 1, "0");
+    mvprintw(navey, navex + 2, "0");
+    mvprintw(navey, navex + 3, "0");
+    mvprintw(navey, navex + 4, "0");
 }
 
 void Nave::move_nave(int ch)
@@ -138,14 +138,13 @@ void Nave::colisao_alien(vector<Alien> a) {
     }
 }
 
-int Nave::damage_nave(vector <Alien> a)
-{
+int Nave::damage_nave(vector<Alien> a) {
     if (!a.empty()) {
         for (int j = 0; j < a.size(); j++) {
             for (int i = 0; i < a.at(j).get_tiros_alien().size(); i++) {
-                if ((a.at(j).get_tiros_alien().at(i).x == getnavex()) && (a.at(j).get_tiros_alien().at(i).y == getnavey()) || (a.at(j).get_tiros_alien().at(i).x == getnavex()) && (a.at(j).get_tiros_alien().at(i).y == getnavey() + 1) || (a.at(j).get_tiros_alien().at(i).x == getnavex()) && (a.at(j).get_tiros_alien().at(i).y == getnavey() + 2) || (a.at(j).get_tiros_alien().at(i).x == getnavex()) && (a.at(j).get_tiros_alien().at(i).y == getnavey() + 3) || (a.at(j).get_tiros_alien().at(i).x == getnavex()) && (a.at(j).get_tiros_alien().at(i).y == getnavey() + 4)) {
-                    health--;
-                    if (health == 0) return 2;
+                if ((a.at(j).get_tiros_alien().at(i).x == getnavex()) && (a.at(j).get_tiros_alien().at(i).y == getnavey()) || (a.at(j).get_tiros_alien().at(i).x == getnavex() + 1) && (a.at(j).get_tiros_alien().at(i).y == getnavey()) || (a.at(j).get_tiros_alien().at(i).x == getnavex() + 2) && (a.at(j).get_tiros_alien().at(i).y == getnavey()) || (a.at(j).get_tiros_alien().at(i).x == getnavex() + 3) && (a.at(j).get_tiros_alien().at(i).y == getnavey()) || (a.at(j).get_tiros_alien().at(i).x == getnavex() + 4) && (a.at(j).get_tiros_alien().at(i).y == getnavey())) {
+                    return 2;
+
                 }
             }
         }

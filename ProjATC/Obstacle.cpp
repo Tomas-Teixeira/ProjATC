@@ -5,7 +5,7 @@ Obstacle::Obstacle(int a, int b)
     y = a;
     x = b;
 }
-void Obstacle::draw() {
+const void Obstacle::draw() {
     mvprintw(y, x, "_");
 }
 

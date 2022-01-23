@@ -8,7 +8,7 @@ private:
 public:
     Obstacle(int a, int b);//Construtor da classe Obstacle recebe as coordenadas do obstaculo
 
-    void draw();//Desenha o obstaculo
+    const void draw();//Desenha o obstaculo
     int getx();//Dá return a coordenada x do obstaculo
     int gety();//Dá return a coordenada x do obstaculo
 

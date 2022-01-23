@@ -13,7 +13,7 @@ vector <coord> Alien::get_tiros_alien()
     return tirosalien;
 }
 
-void Alien::draw_alien() {
+const void Alien::draw_alien() {
     mvprintw(alienx, alieny, "/");
     mvprintw(alienx, alieny + 1, "-");
     mvprintw(alienx, alieny + 2, "\\");

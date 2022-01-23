@@ -14,6 +14,16 @@ void tocaMusica()
     PlaySound(TEXT("music.wav"), NULL, SND_FILENAME | SND_ASYNC);
 }
 
+void stopMusica()
+{
+    PlaySound(NULL, 0, 0);
+}
+
+void tocaMusicaWin()
+{
+    PlaySound(TEXT("musicawin.wav"), NULL, SND_FILENAME | SND_ASYNC);
+}
+
 //Desenha o menu inicial do jogo
 void menu_inicial() {
     mvprintw(15, 50, "Press key to start");
@@ -31,7 +41,7 @@ void drawBorder(int h, int w)
 
     for (int i = 7; i < h; i++)
     {
-        mvprintw(i, 38, "W|");
+        mvprintw(i, 38, "|W");
     }
 
     for (int i = 38; i < w - 34; i++)
@@ -182,7 +192,7 @@ void gameLoop()
     noecho();
     curs_set(FALSE);
     menu_inicial();
-    //tocaMusica();
+    tocaMusica();
 
     while (exit == 1) {
         nodelay(stdscr, TRUE);
@@ -247,6 +257,7 @@ void gameLoop()
         refresh();
     }
     if (exit == 3) {
+        stopMusica();
         mvprintw(2, 50, "                                ");
         mvprintw(3, 50, "     ____________________       ");
         mvprintw(4, 50, "   /|                    |\\    ");
@@ -264,12 +275,12 @@ void gameLoop()
         mvprintw(16, 50, "           |      |             ");
         mvprintw(17, 50, "           |      |             ");
         mvprintw(18, 50, "      _____|      |_____        ");
-        mvprintw(19, 50, "     |      Winn!!      |       ");
+        mvprintw(19, 50, "     |       Win!!      |       ");
         mvprintw(20, 50, "     ------------------        ");
         
         refresh();
         Sleep(5000);
-
+        tocaMusicaWin();
         
         printw("\n\n\n\n\n\n"
             "\t\t  ( o) \n"
