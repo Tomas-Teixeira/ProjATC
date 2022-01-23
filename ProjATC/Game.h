@@ -4,6 +4,7 @@
 #include "Nave.h"
 #include "Alien.h"
 #include "Obstacle.h"
+#pragma comment(lib, "winmm.lib")
 
 void menu_inicial() {
     mvprintw(15, 50, "Press key to start");
@@ -167,6 +168,8 @@ void gameLoop()
     noecho();
     curs_set(FALSE);
     menu_inicial();
+
+    PlaySound(TEXT("music.wav"), NULL, SND_FILENAME | SND_ASYNC);
 
     while (exit == 1) {
         nodelay(stdscr, TRUE);
