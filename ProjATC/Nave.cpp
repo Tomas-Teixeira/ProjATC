@@ -46,12 +46,12 @@ void Nave::draw_nave()
 void Nave::move_nave(int ch)
 {
     switch (ch) {
-    case KEY_LEFT:  // user pressed up arrow key
+    case KEY_LEFT:
         if (navex > 40) navedirectionx = -1;
         else navedirectionx = 0;
         break;
 
-    case KEY_RIGHT:  // user pressed up arrow key
+    case KEY_RIGHT:
         if (navex < 80) navedirectionx = 1;
         else navedirectionx = 0;
         break;
