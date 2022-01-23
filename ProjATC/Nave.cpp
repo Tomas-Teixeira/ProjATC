@@ -1,4 +1,5 @@
 #include "Nave.h"
+#include <curses.h>
 
 Nave::Nave() : navex(60), navey(25), navedirectionx(1) {}
 

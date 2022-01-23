@@ -1,9 +1,15 @@
-#include "Coordenadas.cpp"
+#include <vector>
 
 
 using namespace std;
 
-#pragma once
+
+
+struct coord //Struct que guarda coordenadas de todos os objetos do jogo
+{
+    int x, y;
+};
+
 
 class Nave {
 protected:
