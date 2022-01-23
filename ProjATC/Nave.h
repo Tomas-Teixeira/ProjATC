@@ -24,6 +24,6 @@ public:
     void atualiza_tiros_nave();//Função que atualiza a posição dos tiros da nave
     void colisao_obstacle(vector<Obstacle> a);//Função que verifica se o obstaculo é atingido pelo tiro e apaga o tiro
     void colisao_alien(vector<Alien>a);//Função que verifica se o alien é atingido pelo tiro e apaga o tiro
-    int damage_nave(vector <Alien> a);
+    int damage_nave(vector <Alien> a);//Função que faz com que o jogo acabe se a nave for atingida
 };
 

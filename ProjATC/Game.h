@@ -24,6 +24,11 @@ void tocaMusicaWin()
     PlaySound(TEXT("musicawin.wav"), NULL, SND_FILENAME | SND_ASYNC);
 }
 
+void tocaMusicaLose()
+{
+    PlaySound(TEXT("musicawin.wav"), NULL, SND_FILENAME | SND_ASYNC);
+}
+
 //Desenha o menu inicial do jogo
 void menu_inicial() {
     mvprintw(15, 50, "Press key to start");
