@@ -1,23 +1,24 @@
 #pragma once
-#include "Functions.cpp"
+#include "Coordenadas.cpp"
+#include "Alien.h"
 
 using namespace std;
 
-class Nave {
-protected:
+class Nave{
+private:
 
-    int navex, navey, navedirectionx;
-    vector <coord> tiros;
+    int navex, navey, navedirectionx, health;
 
 public:
-    Nave();
-    bool check_tiros();
-    vector <coord> get_tiros();
-    coord get_tiro(int n);
-    void draw_nave();
-    void move_nave(int ch);
-    void manda_tiros_nave(int ch);
-    void atualiza_tiros_nave();
-    void tiros_restore(vector<coord> a);
+    vector <coord> tiros;
+    Nave();//Construtor da classe Nave recebe as coordenadas da nave e o sentido do movimento da nave
+    bool check_tiros();//Função que retorna a quantidade de tiros
+    vector <coord> get_tiros();//Função que devolve o vetor dos tiros
+    coord get_tiro(int n);//Função que retorna a coordenada de um tiro
+    void draw_nave();//Função que desenha a nave
+    void move_nave(int ch);//Função que trata da movimentação da nave
+    void manda_tiros_nave(int ch);//Função que trata da criação de tiros da nave
+    void atualiza_tiros_nave();//Função que atualiza a posição dos tiros da nave
+    void colisao(vector<Alien> a);
 };
 

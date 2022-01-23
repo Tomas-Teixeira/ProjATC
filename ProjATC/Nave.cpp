@@ -1,7 +1,9 @@
 #include "Nave.h"
 #include <curses.h>
 
-Nave::Nave() : navex(60), navey(25), navedirectionx(1) {}
+Nave::Nave() : navex(60), navey(25), navedirectionx(1), health(3)
+{
+}
 
 bool Nave::check_tiros()
 {
@@ -36,17 +38,12 @@ void Nave::move_nave(int ch)
     switch (ch) {
     case KEY_LEFT:  // user pressed up arrow key
         navedirectionx = -1;
-        navex += navedirectionx;
-
         break;
     case KEY_RIGHT:  // user pressed up arrow key
         navedirectionx = 1;
-        navex += navedirectionx;
-
         break;
     case ERR:
         navedirectionx = 0;
-        navex += navedirectionx;
         break;
     }
     if (navex + 3 >= 120 || navex <= 0) {
@@ -56,8 +53,6 @@ void Nave::move_nave(int ch)
     else {
         navex += navedirectionx;
     }
-
-
 }
 
 void Nave::manda_tiros_nave(int ch)
@@ -68,7 +63,6 @@ void Nave::manda_tiros_nave(int ch)
             coord c0 = coord{ navey, navex + 2 };
             tiros.push_back(c0);
         }
-
     }
 }
 
@@ -95,6 +89,20 @@ void Nave::atualiza_tiros_nave()
     //Atualiza as coords dos tiros percorrendo o vetor de tiros
 }
 
-void Nave::tiros_restore(vector<coord> a) {
-    this->tiros = a;
+void Nave::colisao(vector<Alien> a) {
+    if (!tiros.empty()) {
+        vector<coord> aux;
+        int r = 1;
+        for (int i = 0; i < tiros.size(); i++) {
+            for (int j = 0; j < a.size(); j++) {
+                if ((tiros.at(i).x == a.at(j).alienx) && (tiros.at(i).y == a.at(j).alieny) || (tiros.at(i).x == a.at(j).alienx) && (tiros.at(i).y == a.at(j).alieny + 1) || (tiros.at(i).x == a.at(j).alienx) && (tiros.at(i).y == a.at(j).alieny + 2)) {
+                    r *= 0;
+                }
+
+            }
+            if (r == 1) { aux.push_back(tiros.at(i)); }
+            r = 1;
+        }
+        tiros = aux;
+    }
 }

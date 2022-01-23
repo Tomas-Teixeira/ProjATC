@@ -3,25 +3,13 @@
 using namespace std;
 
 class Obstacle {
-protected:
+private:
     int x, y;
 public:
-    Obstacle(int a, int b) 
-    {
-        y = a;
-        x = b;
-    }
-    void draw() {
-        mvprintw(y, x, "_");
-    }
+    Obstacle(int a, int b);
 
-    int getx() {
-        return x;
-    }
+    void draw();
+    int getx();
+    int gety();
 
-    int gety() {
-        return y;
-    }
 };
-
-
