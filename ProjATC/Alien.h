@@ -55,7 +55,7 @@ public:
 
     void manda_tiros_alien(int acc) {
 
-        coord  = coord{ alieny, alienx + 2 };
+        coord c0 = coord{ alieny, alienx + 2 };
         tirosalien.push_back(c0);
 
     }
