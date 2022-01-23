@@ -1,18 +1,16 @@
-
-
+#pragma once
+#include <curses.h>
 using namespace std;
-
-struct coord //Struct que guarda coordenadas de todos os objetos do jogo
-{
-    int x, y;
-};
-
 
 class Obstacle {
 protected:
     int x, y;
 public:
-    Obstacle(int, int);
+    Obstacle(int a, int b) 
+    {
+        y = a;
+        x = b;
+    }
     void draw() {
         mvprintw(y, x, "_");
     }
@@ -25,10 +23,5 @@ public:
         return y;
     }
 };
-
-Obstacle::Obstacle(int a, int b) {
-    y = a;
-    x = b;
-}
 
 

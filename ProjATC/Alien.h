@@ -1,19 +1,7 @@
-
-#include <curses.h>
-#include <vector>
-
-
-
+#pragma once
+#include "Functions.cpp"
 
 using namespace std;
-
-
-
-struct coord //Struct que guarda coordenadas de todos os objetos do jogo
-{
-    int x, y;
-};
-
 
 class Alien {
 protected:
@@ -21,7 +9,9 @@ protected:
     vector<coord> tirosalien;
 public:
     int alienx, alieny, aliendirection;
-    Alien(int, int);
+    Alien(int x, int y) : aliendirection(1), alienx(x), alieny(y) 
+    {
+    }
 
     int get_aly() {
         return alieny;
@@ -98,7 +88,3 @@ public:
         //else return;
     }
 };
-
-Alien::Alien(int x, int y) : aliendirection(1), alienx(x), alieny(y) {
-
-}
