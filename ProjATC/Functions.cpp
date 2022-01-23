@@ -10,6 +10,11 @@
 
 using namespace std;
 
+struct coord //Struct que guarda coordenadas de todos os objetos do jogo
+{
+    int x, y;
+};
+
 
 vector<coord> impacto(Nave, vector<Alien>);
 vector<Alien> check_collision_alien(Nave, vector<Alien>);

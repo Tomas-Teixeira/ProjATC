@@ -4,7 +4,6 @@
 #include <Windows.h>
 #include <vector>
 
-#pragma once
 
 using namespace std;
 

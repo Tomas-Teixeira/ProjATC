@@ -1,8 +1,6 @@
 #include "Coordenadas.cpp"
 
 
-
-
 using namespace std;
 
 #pragma once

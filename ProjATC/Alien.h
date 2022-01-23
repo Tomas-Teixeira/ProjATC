@@ -1,5 +1,8 @@
 #include "Coordenadas.cpp"
 #include <curses.h>
+#include <vector>
+
+
 using namespace std;
 
 class Alien {
@@ -52,7 +55,7 @@ public:
 
     void manda_tiros_alien(int acc) {
 
-        coord c0 = coord{ alieny, alienx + 2 };
+        coord  = coord{ alieny, alienx + 2 };
         tirosalien.push_back(c0);
 
     }
